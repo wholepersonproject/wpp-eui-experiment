@@ -1,0 +1,19 @@
+{
+  "name": "wpp-eui-experiment",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "build": "npm run generate:metadata && npm run generate:eui-data",
+    "generate:metadata": "node src/gen-biomodels-markdown.js",
+    "generate:eui-data": "node src/gen-biomodels-eui-data.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "papaparse": "^5.5.3",
+    "uuid": "^13.0.0"
+  }
+}
