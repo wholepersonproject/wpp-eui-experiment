@@ -2,7 +2,8 @@ import { readFileSync, writeFileSync } from 'fs';
 import Papa from 'papaparse';
 import { v4 as uuidV4 } from 'uuid';
 
-const INPUT_PATH = 'input-data/Glucose_Model_HRA_Mapping_v4.csv';
+const INPUT_PATH = 'input-data/hra_mapping_100.json';
+// const INPUT_PATH = 'input-data/Glucose_Model_HRA_Mapping_v4.csv';
 const OUTPUT_PATH = 'docs/rui_locations.jsonld';
 
 function parseCsv(csvPath) {
@@ -76,7 +77,8 @@ async function formatModel(model, sex) {
   };
 }
 
-const models = parseCsv(INPUT_PATH);
+// const models = parseCsv(INPUT_PATH);
+const models = JSON.parse(readFileSync(INPUT_PATH, 'utf8'));
 
 const results = [];
 for (const model of models) {
